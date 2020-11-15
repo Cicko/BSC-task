@@ -1,4 +1,5 @@
 const path = require('path')
+const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 
@@ -17,7 +18,7 @@ module.exports = {
     },
     devServer: {
         contentBase: './dist',
-        port: 8000
+        port: 9000
     },
     module: {
         rules: [
@@ -39,6 +40,10 @@ module.exports = {
     plugins: [
         new HtmlWebpackPlugin({
             template: './src/index.html'
-        })
-    ]
+        }),
+        new webpack.EnvironmentPlugin({
+            BASE_URL: 'http://private-9aad-note10.apiary-mock.com/',
+        }),
+    ],
+    target: 'node'
 }
