@@ -1,9 +1,12 @@
 import {
   createStore
 } from 'redux'
+import { createBrowserHistory } from 'history'
 import { install } from 'redux-loop'
 import { composeWithDevTools } from 'redux-devtools-extension'
-import rootReducer from '../../app/store/rootReducer'
+import createRootReducer from '../../app/store/rootReducer'
+
+export const history = createBrowserHistory()
 
 const composeEnhancers = composeWithDevTools({
   trace: true,
@@ -13,7 +16,7 @@ const composeEnhancers = composeWithDevTools({
 const configureStore = () => {
   const store = createStore(
     // @ts-ignore
-    rootReducer,
+    createRootReducer(history),
     composeEnhancers(
       install(),
     )

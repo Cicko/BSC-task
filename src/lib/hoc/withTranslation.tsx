@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { get } from 'lodash'
 import { useMappedState } from 'redux-react-hook';
 import { TranslationManager } from '../services';
 
@@ -6,7 +7,6 @@ import { TranslationManager } from '../services';
  * File created by Rudolf Cicko (@cicko)
  * Created on 17.11.20 - 18:43
  **/
-
 
 const withTranslation = (Component) => (props) => {
     const mapState = React.useCallback(
@@ -23,8 +23,8 @@ const withTranslation = (Component) => (props) => {
             value={TranslationManager.t(language)}
             >
             <Component {...props} />
-    </TranslationManager.Context.Provider>
-)
+        </TranslationManager.Context.Provider>
+    )
 }
 
 export default withTranslation

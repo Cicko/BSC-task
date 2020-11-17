@@ -4,4 +4,5 @@ export default {
     loading: false,
     error: null,
   },
+  language: process.env.FALLBACK_LANG
 }

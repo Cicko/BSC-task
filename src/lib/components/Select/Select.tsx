@@ -15,7 +15,7 @@ export interface SelectOptionProps {
 export interface SelectProps {
     label: string
     value: any
-    onChange: (any) => SelectInputProps['onChange']
+    onChange: (any) => void
     options: Array<SelectOptionProps>
 }
 const useStyles = makeStyles((theme: Theme) =>

@@ -1,0 +1,6 @@
+{
+  "appbar.button.create.label": "Vytvořit poznámku",
+  "notes.header.title": "Poznámky",
+  "notes.header.subtitle": "Jednoduchá aplikace pro správu poznámek",
+  "note.card.title": "Poznámka s ID: {id}"
+}

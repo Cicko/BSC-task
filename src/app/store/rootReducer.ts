@@ -1,8 +1,11 @@
 import { combineReducers } from 'redux-loop'
-import { notesReducer } from './reducers'
+import { connectRouter } from 'connected-react-router'
+import { notesReducer, languageReducer } from './reducers'
 
-const combinedReducer = combineReducers({
-  fetch: notesReducer,
+const createRootReducer = (history) => combineReducers({
+  router: connectRouter(history),
+  language: languageReducer,
+  notes: notesReducer,
 })
 
-export default combinedReducer
+export default createRootReducer

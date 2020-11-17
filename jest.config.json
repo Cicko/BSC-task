@@ -1,0 +1,35 @@
+{
+    "rootDir": "..",
+    "coverageDirectory": "<rootDir>/tests/__coverage__/",
+    "setupFiles": [
+      "./src/setupTests.ts"
+    ],
+    "roots": [
+      "<rootDir>/src/",
+      "<rootDir>/tests/"
+    ],
+    "moduleNameMapper": {
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/tests/__mocks__/fileMock.js",
+      "\\.(css|scss|less)$": "<rootDir>/tests/__mocks__/styleMock.js"
+    },
+    "moduleFileExtensions": ["ts", "tsx", "js", "jsx", "json"],
+    "transform": {
+      "^.+\\.(ts|tsx)$": "ts-jest",
+      "^.+\\.test.ts$": "babel-jest",
+      "^.+\\.(js|jsx)?$": "babel-jest"
+    },
+    "snapshotSerializers": ["enzyme-to-json/serializer"],
+    "transformIgnorePatterns": ["<rootDir>/node_modules/"],
+    "moduleDirectories": [
+      "node_modules"
+    ],
+    "verbose": true,
+    "globals": {
+      "DEVELOPMENT": false,
+      "FAKE_SERVER": false,
+      "COUNTRY": "ph",
+      "ts-jest": {
+        "diagnostics": false
+      }
+    }
+  }

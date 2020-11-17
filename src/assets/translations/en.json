@@ -1,0 +1,7 @@
+{
+  "appbar.button.create.label": "Create note",
+  "appbar.languages.select.label": "Language",
+  "notes.header.title": "Notes",
+  "notes.header.subtitle": "A simple notes management app",
+  "note.card.title": "Note with ID: {id}"
+}

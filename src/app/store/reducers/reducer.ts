@@ -14,42 +14,43 @@ import initialState from '../initialState';
 
 
 const initState = {
-  notes: initialState.notes
+  ...initialState.notes
 }
 
 const reducer = (state = initState, action) => {
   switch (action.type) {
     case NOTES_FETCH_INIT:
       return loop(
-        { ...state, user: {
-            user: null,
-            loading: true,
-            error: null,
-        }},
-        Cmd.run(getNotes, {
-          successActionCreator: fetchNotesSuccess,
-          failActionCreator: fetchNotesError,
-        })
+          { loading: true },
+          Cmd.run(getNotes, {
+            successActionCreator: fetchNotesSuccess,
+            failActionCreator: fetchNotesError,
+          })
       )
 
-    case NOTES_FETCH_SUCCESS:
+    case NOTES_FETCH_INIT:
+        return loop(
+        { loading: true },
+        Cmd.run(getNotes, {
+        successActionCreator: fetchNotesSuccess,
+        failActionCreator: fetchNotesError,
+        })
+    )
+
+
+
+      case NOTES_FETCH_SUCCESS:
       return {
-        ...state,
-        notes: {
-          ...state.notes,
           loading: false,
           error: false,
-          user: action.data,
-        },
+          data: action.data.data,
       }
 
     case NOTES_FETCH_ERROR:
       return {
-        ...state,
-        notes: {
-          ...state.notes,
+          error: action.error,
           loading: false,
-        }
+          data: null
       }
 
     default:
