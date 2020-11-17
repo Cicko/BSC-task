@@ -18,6 +18,7 @@ module.exports = {
     },
     devServer: {
         contentBase: './dist',
+        historyApiFallback: true,
         port: 9000
     },
     module: {
@@ -43,6 +44,7 @@ module.exports = {
         }),
         new webpack.EnvironmentPlugin({
             BASE_URL: 'http://private-9aad-note10.apiary-mock.com/',
+            FALLBACK_LANG: 'en',
         }),
     ],
     target: 'node'
