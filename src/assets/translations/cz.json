@@ -1,6 +1,13 @@
 {
   "appbar.button.create.label": "Vytvořit poznámku",
+  "appbar.languages.select.label": "Jazyk",
   "notes.header.title": "Poznámky",
   "notes.header.subtitle": "Jednoduchá aplikace pro správu poznámek",
-  "note.card.title": "Poznámka s ID: {id}"
+  "note.card.title": "Poznámka s ID: {id}",
+  "form.title.label": "Titul",
+  "form.create.submit.label": "Vytvořit poznámku",
+  "form.create.cancel.label": "Zrušit",
+  "form.edit.submit.label": "Opravit poznámku",
+  "form.edit.cancel.label": "Zrušit",
+  "toast.error.note_doesnt_exist": "Poznámka ne existuje"
 }

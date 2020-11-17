@@ -17,13 +17,29 @@ import { Select } from '../../../lib/components';
 import languages from '../../config/languages';
 import { setLanguage } from '../../store/actions/actions';
 import withTranslation from '../../../lib/hoc/withTranslation';
+import { makeStyles } from '@material-ui/core/styles';
+import { createStyles, Theme } from '@material-ui/core';
 
 interface AppBarProps {
 }
 
+const useStyles = makeStyles((theme: Theme) =>
+    createStyles({
+        container: {
+            flexGrow: 1,
+        },
+        toolbar: {
+            display: 'flex',
+            justifyContent: 'space-between',
+            background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
+        }
+    }),
+);
+
 
 const AppBarComponent: React.FC<AppBarProps> = (props: AppBarProps) => {
     const t = useTranslation()
+    const classes = useStyles();
     const { history } = useReactRouter()
     const dispatch = useDispatch()
     const mapState = React.useCallback(
@@ -45,12 +61,14 @@ const AppBarComponent: React.FC<AppBarProps> = (props: AppBarProps) => {
     }
 
     return (
-        <AppBar position="relative">
-            <Toolbar>
-                <Button variant="contained" onClick={onCreate}>{t('appbar.button.create.label')}</Button>
-                <Select label={t('appbar.languages.select.label')} options={languages} value={language} onChange={onLanguageChange}/>
-            </Toolbar>
-        </AppBar>
+        <div className={classes.container}>
+            <AppBar position="relative">
+                <Toolbar className={classes.toolbar}>
+                    <Button color="primary" variant="contained" onClick={onCreate}>{t('appbar.button.create.label')}</Button>
+                    <Select label={t('appbar.languages.select.label')} options={languages} value={language} onChange={onLanguageChange}/>
+                </Toolbar>
+            </AppBar>
+        </div>
     )
 }
 

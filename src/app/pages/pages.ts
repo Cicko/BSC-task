@@ -3,9 +3,9 @@
  * Created on 16.11.20 - 18:57
  **/
 
-import NotesPage from './notes/notes'
-import EditNotePage from './editNote/editNote';
-import CreateNotePage from './createNote/createNote'
+import NotesPage from './NotesPage/NotesPage'
+import EditNotePage from './EditNotePage/EditNotePage';
+import CreateNotePage from './CreateNotePage/CreateNotePage'
 
 export {
     NotesPage,

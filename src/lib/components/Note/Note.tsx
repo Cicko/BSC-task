@@ -9,6 +9,7 @@ import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
 import CardActions from '@material-ui/core/CardActions';
+import IconButton from '@material-ui/core/IconButton';
 import EditIcon from '@material-ui/icons/Edit';
 import DeleteIcon from '@material-ui/icons/Delete';
 import { makeStyles } from '@material-ui/core/styles';
@@ -19,15 +20,24 @@ const useStyles = makeStyles(() => ({
         height: '100%',
         display: 'flex',
         flexDirection: 'column',
+        background: 'linear-gradient(to top right, #F3F3F3, #E2E2E2)'
     },
     cardContent: {
         flexGrow: 1,
     },
+    cardActions: {
+        display: 'flex',
+        justifyContent: 'space-between',
+    }
 }));
 
-export interface NoteProps {
+export interface INote {
     id: number,
-    title: string,
+    title: string
+}
+
+
+export interface NoteProps extends INote {
     onEdit: (note) => (MouseEventHandler) => void
     onDelete: (note) => (MouseEventHandler) => void
 }
@@ -48,9 +58,13 @@ const Note: React.FC<NoteProps> = (note) => {
                         {title}
                     </Typography>
                 </CardContent>
-                <CardActions >
-                    <EditIcon onClick={onEdit(note)}/>
-                    <DeleteIcon onClick={onDelete(note)}/>
+                <CardActions className={classes.cardActions}>
+                    <IconButton aria-label="edit" onClick={onEdit(note)}>
+                        <EditIcon/>
+                    </IconButton>
+                    <IconButton aria-label="delete" onClick={onDelete(note)}>
+                        <DeleteIcon/>
+                    </IconButton>
                 </CardActions>
             </Card>
         </Grid>

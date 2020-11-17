@@ -36,13 +36,14 @@ const SelectComponent: React.FC<SelectProps> = (props) => {
     const renderOption = (opt) => <MenuItem key={opt.label} value={opt.value}>{opt.label}</MenuItem>
 
     return (
-        <FormControl className={classes.formControl}>
+        <FormControl variant="filled">
             <InputLabel id="demo-simple-select-label">{props.label}</InputLabel>
             <Select
                 labelId="demo-simple-select-label"
                 id="demo-simple-select"
                 value={props.value}
                 onChange={props.onChange}
+                variant="filled"
             >
                 {props.options.map(renderOption)}
             </Select>

@@ -9,6 +9,7 @@ module.exports = {
         vendor: ['react', 'react-dom']
     },
     output: {
+        publicPath: '/',
         path: path.resolve(__dirname, 'dist'),
         filename: 'js/[name].bundle.js'
     },
@@ -17,7 +18,6 @@ module.exports = {
         extensions: ['.ts', '.tsx', '.js', '.jsx', '.json']
     },
     devServer: {
-        contentBase: './dist',
         historyApiFallback: true,
         port: 9000
     },
@@ -29,7 +29,7 @@ module.exports = {
                 loader: 'babel-loader'
             },
             {
-                test: /\.s[ac]ss$/i,
+                test: /\.s?[ac]ss$/i,
                 use: [
                     'style-loader',
                     'css-loader',
@@ -43,7 +43,7 @@ module.exports = {
             template: './src/index.html'
         }),
         new webpack.EnvironmentPlugin({
-            BASE_URL: 'http://private-9aad-note10.apiary-mock.com/',
+            BASE_URL: 'http://private-9aad-note10.apiary-mock.com',
             FALLBACK_LANG: 'en',
         }),
     ],
