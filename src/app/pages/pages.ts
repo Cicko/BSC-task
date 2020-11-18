@@ -4,12 +4,7 @@
  **/
 
 import NotesPage from './NotesPage/NotesPage'
-import EditNotePage from './EditNotePage/EditNotePage';
+import EditNotePage from './EditNotePage/EditNotePage'
 import CreateNotePage from './CreateNotePage/CreateNotePage'
 
-export {
-    NotesPage,
-    EditNotePage,
-    CreateNotePage
-}
-
+export { NotesPage, EditNotePage, CreateNotePage }

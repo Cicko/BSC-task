@@ -7,17 +7,17 @@ import en from '../../assets/translations/en.json'
 import cz from '../../assets/translations/cz.json'
 
 export interface ILanguage {
-    label: string
-    value: string
+  label: string
+  value: string
 }
 
 export default [
-    {
-        label: 'English',
-        value: 'en',
-    },
-    {
-        label: 'Czech',
-        value: 'cz'
-    }
+  {
+    label: 'English',
+    value: 'en',
+  },
+  {
+    label: 'Czech',
+    value: 'cz',
+  },
 ]

@@ -1,12 +1,10 @@
 {
-    "rootDir": "..",
-    "coverageDirectory": "<rootDir>/tests/__coverage__/",
+    "rootDir": ".",
     "setupFiles": [
       "./src/setupTests.ts"
     ],
     "roots": [
-      "<rootDir>/src/",
-      "<rootDir>/tests/"
+      "<rootDir>/src/"
     ],
     "moduleNameMapper": {
       "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/tests/__mocks__/fileMock.js",
@@ -25,9 +23,8 @@
     ],
     "verbose": true,
     "globals": {
-      "DEVELOPMENT": false,
-      "FAKE_SERVER": false,
-      "COUNTRY": "ph",
+      "BASE_URL": "http://private-9aad-note10.apiary-mock.com",
+      "FALLBACK_LANG": "en",
       "ts-jest": {
         "diagnostics": false
       }

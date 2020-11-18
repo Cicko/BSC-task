@@ -3,8 +3,6 @@
  * Created on 15.11.20 - 16:21
  **/
 
-import TranslationManager from './TranslationService/TranslationService';
+import TranslationManager from './TranslationService/TranslationService'
 
-export {
-    TranslationManager
-}
+export { TranslationManager }

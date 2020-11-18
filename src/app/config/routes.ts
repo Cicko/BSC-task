@@ -7,6 +7,4 @@ const BASE_URL = process.env.BASE_URL
 
 const notesRoute = BASE_URL.concat('/notes')
 
-export {
-    notesRoute
-}
+export { notesRoute }

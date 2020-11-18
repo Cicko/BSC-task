@@ -1,7 +1,4 @@
-import {
-    createStore,
-    applyMiddleware
-} from 'redux'
+import { createStore, applyMiddleware } from 'redux'
 import { createBrowserHistory } from 'history'
 import { install } from 'redux-loop'
 import { composeWithDevTools } from 'redux-devtools-extension'
@@ -19,10 +16,7 @@ const configureStore = () => {
   const store = createStore(
     // @ts-ignore
     createRootReducer(history),
-    composeEnhancers(
-        install(),
-        applyMiddleware(middleware)
-    )
+    composeEnhancers(install(), applyMiddleware(middleware))
   )
   return store
 }
