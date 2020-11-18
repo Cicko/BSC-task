@@ -3,11 +3,9 @@
  * Created on 18.11.20 - 12:26
  **/
 import * as React from 'react'
-import { create } from 'react-test-renderer'
 import AppBar from './AppBar'
 import { StoreContext } from 'redux-react-hook'
 import configureStore from '../../store/configureStore'
-import { Router, Memoryrouter } from 'react-router-dom'
 import { MemoryRouter } from 'react-router-dom';
 import { render, fireEvent } from '@testing-library/react';
 

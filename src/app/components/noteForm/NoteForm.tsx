@@ -15,7 +15,7 @@ const useStyles = makeStyles((theme) => ({
     width: '100%', // Fix IE11 issue.
     marginTop: theme.spacing(1),
   },
-  submit: {
+  button: {
     margin: theme.spacing(3, 0, 2),
   },
 }))
@@ -43,21 +43,24 @@ const NoteForm: React.FC<NoteFormProps> = (props) => {
         label={t('form.title.label')}
         name="title"
         value={title}
+        inputProps={{ "data-testid": "form-title-input" }}
         onChange={({ target }) => setTitle(target.value)}
         autoComplete="title"
         autoFocus
       />
       <Button
         variant="contained"
+        data-testid="form-button-cancel"
         onClick={() => props.onCancel(title)}
-        className={classes.submit}
+        className={classes.button}
       >
         {props.cancelButtonLabel}
       </Button>
       <Button
         variant="contained"
+        data-testid="form-button-submit"
         onClick={() => props.onSubmit(title)}
-        className={classes.submit}
+        className={classes.button}
       >
         {props.submitButtonLabel}
       </Button>
