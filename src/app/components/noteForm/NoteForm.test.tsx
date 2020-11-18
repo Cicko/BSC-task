@@ -73,7 +73,6 @@ describe('NoteForm component', () => {
     test('After modifying title, the value should be returned to the onSubmit function', () => {
 
         const input = getbyTestId('form-title-input')
-        console.log(input)
 
         fireEvent.change(input, { target: { value: 'New value' }})
 
