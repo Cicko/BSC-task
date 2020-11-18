@@ -24,7 +24,7 @@ export interface SelectProps {
   value: any
   onChange: (any) => void
   options: Array<SelectOptionProps>
-    id: string
+  id: string
 }
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({

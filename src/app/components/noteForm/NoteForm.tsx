@@ -43,7 +43,7 @@ const NoteForm: React.FC<NoteFormProps> = (props) => {
         label={t('form.title.label')}
         name="title"
         value={title}
-        inputProps={{ "data-testid": "form-title-input" }}
+        inputProps={{ 'data-testid': 'form-title-input' }}
         onChange={({ target }) => setTitle(target.value)}
         autoComplete="title"
         autoFocus

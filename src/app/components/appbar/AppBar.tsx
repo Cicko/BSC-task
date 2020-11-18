@@ -61,7 +61,12 @@ const AppBarComponent: React.FC<AppBarProps> = (props: AppBarProps) => {
     <div className={classes.container}>
       <AppBar position="relative">
         <Toolbar className={classes.toolbar}>
-          <Button data-testid="create-note-button" color="primary" variant="contained" onClick={onCreate}>
+          <Button
+            data-testid="create-note-button"
+            color="primary"
+            variant="contained"
+            onClick={onCreate}
+          >
             {t('appbar.button.create.label')}
           </Button>
           <Select
